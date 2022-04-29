@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
+<report name="core">
+    <sessioninfo id="workstation.nvmnd" start="1650381150858" dump="1650381151669"/>
+    <package name="net/appsynth/featureflags">
+        <class name="net/appsynth/featureflags/Features$ThrowingFeatureStateProvider" sourcefilename="Features.kt">
+            <method name="&lt;init&gt;" desc="()V" line="28">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isFeatureEnabled" desc="(Lnet/appsynth/featureflags/Feature;)Z" line="30">
+                <counter type="INSTRUCTION" missed="8" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="hasFeature" desc="(Lnet/appsynth/featureflags/Feature;)Z" line="33">
+                <counter type="INSTRUCTION" missed="5" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <counter type="INSTRUCTION" missed="13" covered="3"/>
+            <counter type="LINE" missed="2" covered="1"/>
+            <counter type="COMPLEXITY" missed="2" covered="1"/>
+            <counter type="METHOD" missed="2" covered="1"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="net/appsynth/featureflags/Feature" sourcefilename="Feature.kt"/>
+        <class name="net/appsynth/featureflags/Features" sourcefilename="Features.kt">
+            <method name="onEnabled" desc="(Lnet/appsynth/featureflags/Feature;Lkotlin/jvm/functions/Function0;)V"
+                    line="7">
+                <counter type="INSTRUCTION" missed="0" covered="14"/>
+                <counter type="BRANCH" missed="0" covered="2"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="2"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="onDisabled" desc="(Lnet/appsynth/featureflags/Feature;Lkotlin/jvm/functions/Function0;)V"
+                    line="13">
+                <counter type="INSTRUCTION" missed="0" covered="14"/>
+                <counter type="BRANCH" missed="0" covered="2"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="2"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="isEnabled" desc="(Lnet/appsynth/featureflags/Feature;)Z" line="19">
+                <counter type="INSTRUCTION" missed="0" covered="33"/>
+                <counter type="BRANCH" missed="0" covered="6"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="4"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="setProviders" desc="([Lnet/appsynth/featureflags/FeatureStateProvider;)V" line="24">
+                <counter type="INSTRUCTION" missed="0" covered="11"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="&lt;clinit&gt;" desc="()V" line="4">
+                <counter type="INSTRUCTION" missed="0" covered="18"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="0" covered="90"/>
+            <counter type="BRANCH" missed="0" covered="10"/>
+            <counter type="LINE" missed="0" covered="13"/>
+            <counter type="COMPLEXITY" missed="0" covered="10"/>
+            <counter type="METHOD" missed="0" covered="5"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="net/appsynth/featureflags/DeveloperSetting" sourcefilename="DeveloperSetting.kt">
+            <method name="&lt;init&gt;"
+                    desc="(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V" line="3">
+                <counter type="INSTRUCTION" missed="0" covered="20"/>
+                <counter type="LINE" missed="0" covered="6"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="&lt;init&gt;"
+                    desc="(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+                    line="3">
+                <counter type="INSTRUCTION" missed="0" covered="20"/>
+                <counter type="LINE" missed="0" covered="4"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getId" desc="()Ljava/lang/String;" line="4">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getTitle" desc="()Ljava/lang/String;" line="5">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getDescription" desc="()Ljava/lang/String;" line="6">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getAppRestartNeeded" desc="()Z" line="7">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getDefaultValue" desc="()Z" line="8">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="&lt;clinit&gt;" desc="()V" line="10">
+                <counter type="INSTRUCTION" missed="0" covered="40"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="12" covered="83"/>
+            <counter type="LINE" missed="0" covered="10"/>
+            <counter type="COMPLEXITY" missed="4" covered="4"/>
+            <counter type="METHOD" missed="4" covered="4"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="net/appsynth/featureflags/FeatureFlag" sourcefilename="FeatureFlag.kt">
+            <method name="&lt;init&gt;"
+                    desc="(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V"
+                    line="5">
+                <counter type="INSTRUCTION" missed="0" covered="20"/>
+                <counter type="LINE" missed="0" covered="6"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="&lt;init&gt;"
+                    desc="(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+                    line="5">
+                <counter type="INSTRUCTION" missed="0" covered="15"/>
+                <counter type="LINE" missed="0" covered="3"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getId" desc="()Ljava/lang/String;" line="6">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getTitle" desc="()Ljava/lang/String;" line="7">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getDescription" desc="()Ljava/lang/String;" line="8">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="getCreatedAt" desc="()Ljava/lang/String;" line="9">
+                <counter type="INSTRUCTION" missed="0" covered="3"/>
+                <counter type="LINE" missed="0" covered="1"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <method name="getDefaultValue" desc="()Z" line="10">
+                <counter type="INSTRUCTION" missed="3" covered="0"/>
+                <counter type="LINE" missed="1" covered="0"/>
+                <counter type="COMPLEXITY" missed="1" covered="0"/>
+                <counter type="METHOD" missed="1" covered="0"/>
+            </method>
+            <method name="&lt;clinit&gt;" desc="()V" line="12">
+                <counter type="INSTRUCTION" missed="0" covered="29"/>
+                <counter type="LINE" missed="0" covered="2"/>
+                <counter type="COMPLEXITY" missed="0" covered="1"/>
+                <counter type="METHOD" missed="0" covered="1"/>
+            </method>
+            <counter type="INSTRUCTION" missed="9" covered="70"/>
+            <counter type="LINE" missed="0" covered="9"/>
+            <counter type="COMPLEXITY" missed="3" covered="5"/>
+            <counter type="METHOD" missed="3" covered="5"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </class>
+        <class name="net/appsynth/featureflags/FeatureFlagKt" sourcefilename="FeatureFlag.kt"/>
+        <class name="net/appsynth/featureflags/FeatureStateProvider" sourcefilename="FeatureStateProvider.kt"/>
+        <sourcefile name="DeveloperSetting.kt">
+            <line nr="3" mi="0" ci="20" mb="0" cb="0"/>
+            <line nr="4" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="5" mi="3" ci="3" mb="0" cb="0"/>
+            <line nr="6" mi="3" ci="3" mb="0" cb="0"/>
+            <line nr="7" mi="3" ci="5" mb="0" cb="0"/>
+            <line nr="8" mi="3" ci="5" mb="0" cb="0"/>
+            <line nr="10" mi="0" ci="13" mb="0" cb="0"/>
+            <line nr="11" mi="0" ci="11" mb="0" cb="0"/>
+            <line nr="12" mi="0" ci="16" mb="0" cb="0"/>
+            <line nr="13" mi="0" ci="1" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="12" covered="83"/>
+            <counter type="LINE" missed="0" covered="10"/>
+            <counter type="COMPLEXITY" missed="4" covered="4"/>
+            <counter type="METHOD" missed="4" covered="4"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="FeatureFlag.kt">
+            <line nr="5" mi="0" ci="17" mb="0" cb="0"/>
+            <line nr="6" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="7" mi="3" ci="3" mb="0" cb="0"/>
+            <line nr="8" mi="3" ci="3" mb="0" cb="0"/>
+            <line nr="9" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="10" mi="3" ci="5" mb="0" cb="0"/>
+            <line nr="12" mi="0" ci="13" mb="0" cb="0"/>
+            <line nr="13" mi="0" ci="16" mb="0" cb="0"/>
+            <line nr="14" mi="0" ci="1" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="50" covered="50"/>
+            <counter type="LINE" missed="75" covered="25"/>
+            <counter type="COMPLEXITY" missed="5" covered="15"/>
+            <counter type="METHOD" missed="3" covered="3"/>
+            <counter type="CLASS" missed="0" covered="1"/>
+        </sourcefile>
+        <sourcefile name="Feature.kt"/>
+        <sourcefile name="Features.kt">
+            <line nr="4" mi="0" ci="14" mb="0" cb="0"/>
+            <line nr="7" mi="0" ci="4" mb="0" cb="2"/>
+            <line nr="8" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="10" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="13" mi="0" ci="4" mb="0" cb="2"/>
+            <line nr="14" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="16" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="19" mi="0" ci="20" mb="0" cb="6"/>
+            <line nr="20" mi="0" ci="6" mb="0" cb="0"/>
+            <line nr="21" mi="0" ci="4" mb="0" cb="0"/>
+            <line nr="24" mi="0" ci="2" mb="0" cb="0"/>
+            <line nr="25" mi="0" ci="5" mb="0" cb="0"/>
+            <line nr="26" mi="0" ci="1" mb="0" cb="0"/>
+            <line nr="28" mi="0" ci="3" mb="0" cb="0"/>
+            <line nr="30" mi="5" ci="0" mb="0" cb="0"/>
+            <line nr="33" mi="2" ci="0" mb="0" cb="0"/>
+            <counter type="INSTRUCTION" missed="13" covered="93"/>
+            <counter type="BRANCH" missed="0" covered="10"/>
+            <counter type="LINE" missed="2" covered="14"/>
+            <counter type="COMPLEXITY" missed="2" covered="11"/>
+            <counter type="METHOD" missed="2" covered="6"/>
+            <counter type="CLASS" missed="0" covered="2"/>
+        </sourcefile>
+        <sourcefile name="FeatureStateProvider.kt"/>
+        <counter type="INSTRUCTION" missed="34" covered="246"/>
+        <counter type="BRANCH" missed="0" covered="10"/>
+        <counter type="LINE" missed="2" covered="33"/>
+        <counter type="COMPLEXITY" missed="9" covered="20"/>
+        <counter type="METHOD" missed="9" covered="15"/>
+        <counter type="CLASS" missed="0" covered="4"/>
+    </package>
+    <counter type="INSTRUCTION" missed="34" covered="246"/>
+    <counter type="BRANCH" missed="0" covered="10"/>
+    <counter type="LINE" missed="2" covered="33"/>
+    <counter type="COMPLEXITY" missed="9" covered="20"/>
+    <counter type="METHOD" missed="9" covered="15"/>
+    <counter type="CLASS" missed="0" covered="4"/>
+</report>
