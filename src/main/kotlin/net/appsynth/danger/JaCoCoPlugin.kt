@@ -8,7 +8,7 @@ import java.io.File
 fun jacoco(block: JaCoCoPlugin.() -> Unit) = JaCoCoPlugin.run(block)
 
 object JaCoCoPlugin : DangerPlugin() {
-    private const val MAX_REPORTED_FILES = 30
+    private const val MAX_REPORTED_FILES = 20
 
     override val id: String = this.javaClass.name
 

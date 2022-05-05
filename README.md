@@ -38,7 +38,7 @@ jacoco {
         Regex(".*Test\\.(kt|java)")
     )
 
-    // to reduce the size of the summary, there is a limit of 30 reported files
+    // to reduce the size of the summary, there is a limit of 20 reported files
     // you can override this value with below parameter
     maxReportedFiles = 10
 
