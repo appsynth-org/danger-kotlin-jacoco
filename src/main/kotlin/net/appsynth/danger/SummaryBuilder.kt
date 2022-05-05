@@ -22,9 +22,9 @@ class SummaryBuilder(
         sourceFileCoverage.sortByDescending { it.coverage }
 
         return buildString {
-            append("### Coverage Summary\n")
+            append("### Coverage Summary\n\n")
             append("| Source file | Coverage |\n")
-            append("| ----------- | -------- |\n")
+            append("| --- | --- |\n")
 
             for (fileCoverage in sourceFileCoverage.take(maxReportedFiles)) {
                 val displayedCoverage = if (fileCoverage.coverage != null) {
@@ -39,6 +39,8 @@ class SummaryBuilder(
             if (reportedFiles.size > maxReportedFiles) {
                 append("${reportedFiles.size - maxReportedFiles} more files omitted in this summary.")
             }
+
+            append("\n\n")
         }
     }
 

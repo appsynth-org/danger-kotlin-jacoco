@@ -9,6 +9,16 @@ import org.junit.jupiter.api.Test
 class SummaryBuilderTest {
 
     @Test
+    fun `summary has proper table headers`() {
+        val builder = SummaryBuilder(COVERAGE, 10)
+
+        val summary = builder.build(FILES)
+
+        assertTrue(summary.contains("| Source file | Coverage |\n"))
+        assertTrue(summary.contains("| --- | --- |\n"))
+    }
+
+    @Test
     fun `summary displays no coverage text for not covered files`() {
         val builder = SummaryBuilder(COVERAGE, 3)
 
