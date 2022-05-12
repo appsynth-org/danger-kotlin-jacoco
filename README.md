@@ -65,7 +65,7 @@ danger(args) {
     val changedFiles =  git.modifiedFiles + git.createdFiles
 
     jacoco {
-        val coverageReports = File("")
+        val coverageReports = File(".")
             .walk()
             .maxDepth(10)
             .filter { it.name == "jacoco.xml" }
