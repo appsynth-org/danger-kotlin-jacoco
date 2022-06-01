@@ -1,4 +1,4 @@
-name: Publishing of release and snapshot versions
+name: Publishing
 
 on:
   push:
