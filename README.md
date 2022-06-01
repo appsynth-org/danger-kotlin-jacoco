@@ -1,5 +1,7 @@
 # danger-kotlin JaCoCo plugin
 
+![Maven Central](https://img.shields.io/maven-central/v/net.appsynth.danger/danger-kotlin-jacoco)
+
 Plugin for [danger-kotlin](https://github.com/danger/kotlin) that can parse JaCoCo code coverage reports
 and post results as PR comments.
 
