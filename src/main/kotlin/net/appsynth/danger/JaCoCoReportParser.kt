@@ -8,6 +8,11 @@ import javax.xml.namespace.QName
 import javax.xml.stream.XMLInputFactory
 import javax.xml.stream.events.StartElement
 
+/**
+ * Implements fast parsing of JaCoCo XML reports.
+ *
+ * This parser will not perform any type of XML format or schema validation.
+ */
 internal class JaCoCoReportParser {
 
     private val inputFactory: XMLInputFactory = XMLInputFactory.newInstance().apply {
@@ -17,6 +22,11 @@ internal class JaCoCoReportParser {
         setProperty(XMLInputFactory.SUPPORT_DTD, false)
     }
 
+    /**
+     * Parse single JaCoCo [reportFile].
+     *
+     * @return coverage holding object or null if the report didn't have "report" section.
+     */
     fun parse(reportFile: File): Coverage? {
         val reader = inputFactory.createXMLEventReader(reportFile.inputStream())
 

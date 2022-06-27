@@ -21,6 +21,11 @@ object JaCoCoPlugin : DangerPlugin() {
 
     var excludePatterns = emptyList<Regex>()
 
+    /**
+     * Parse and aggregate JaCoCo [reportFiles].
+     *
+     * @param reportFiles JaCoCo XML report files.
+     */
     fun parse(vararg reportFiles: File) {
         for (file in reportFiles) {
             parser.parse(file)?.let {
