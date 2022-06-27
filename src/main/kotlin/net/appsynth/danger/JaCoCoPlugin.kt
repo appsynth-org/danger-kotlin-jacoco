@@ -13,6 +13,7 @@ object JaCoCoPlugin : DangerPlugin() {
     override val id: String = this.javaClass.name
 
     private val coverage = Coverage()
+    private val referenceCoverage = Coverage()
     private val parser = JaCoCoReportParser()
 
     var maxReportedFiles = MAX_REPORTED_FILES
@@ -34,6 +35,25 @@ object JaCoCoPlugin : DangerPlugin() {
         }
     }
 
+    /**
+     * Parse and aggregate reference JaCoCo [reportFiles].
+     *
+     * @param reportFiles JaCoCo XML report files.
+     * @since 0.2.0
+     */
+    fun reference(vararg reportFiles: File) {
+        for (file in reportFiles) {
+            parser.parse(file)?.let {
+                referenceCoverage.aggregate(it)
+            }
+        }
+    }
+
+    /**
+     * Report code coverage summary on [filePaths].
+     *
+     * @param filePaths list of relative source file paths
+     */
     fun report(filePaths: List<String>) {
         val filesToReport = filePaths.filterNot { filePath ->
             excludePatterns.any { it.matches(filePath) }
@@ -47,7 +67,8 @@ object JaCoCoPlugin : DangerPlugin() {
 
             val builder = SummaryBuilder(
                 coverage,
-                maxReportedFiles
+                maxReportedFiles,
+                referenceCoverage
             )
             context.markdown(builder.build(filesToReport))
         }

@@ -17,7 +17,7 @@ register plugin JaCoCoPlugin
 ```
 in your `Dangerfile.df.kts`.
 
-After this, you can use `JaCoCoPlugin` class, which provides 2 methods:
+After this, you can use `JaCoCoPlugin` class, which provides 2 main methods:
 ```kotlin
 JaCoCoPlugin.parse(vararg reportFiles: File)
 JaCoCoPlugin.report(filePaths: List<String>)
@@ -30,6 +30,9 @@ jacoco {
     report(git.modifiedFiles + git.createdFiles)
 }
 ```
+
+To produce coverage summary that would show coverage value changes, you can use
+`JaCoCoPlugin.reference(vararg reportFiles: File)` method.
 
 For additional control, there are some useful configuration options you can set:
 ```kotlin
@@ -51,7 +54,7 @@ jacoco {
 }
 ```
 
-## Example
+## Examples
 ```kotlin
 @file:DependsOn("net.appsynth.danger:danger-kotlin-jacoco:X.Y.Z")
 
@@ -82,3 +85,36 @@ danger(args) {
 This will try to find all jacoco.xml files by traversing directory structure up to 10 levels deep.
 Then it will parse all found reports into internal format. At the end it will post summary for modified
 or added Kotlin/Java source files as PR comment.
+
+```kotlin
+@file:DependsOn("net.appsynth.danger:danger-kotlin-jacoco:X.Y.Z")
+
+import net.appsynth.danger.JaCoCoPlugin
+import net.appsynth.danger.jacoco
+import systems.danger.kotlin.*
+import java.io.File
+import kotlin.io.walk
+
+register plugin JaCoCoPlugin
+
+danger(args) {
+    val changedFiles =  git.modifiedFiles + git.createdFiles
+
+    jacoco {
+        val coverageReports = File(".")
+            .walk()
+            .maxDepth(10)
+            .filter {
+                it.name == "jacoco.xml" && !it.path.contains("ref-report")
+            }
+            .toList()
+
+        parse(*coverageReports.toTypedArray())
+        reference(File("ref-report/jacoco.xml"))
+        report(changedFiles.filter { it.endsWith(".kt") || it.endsWith(".java") })
+    }
+}
+```
+
+This example, is almost same like the previous one, but will display more detailed code coverage summary. It will
+additionally load reference report to produce information about coverage value difference.

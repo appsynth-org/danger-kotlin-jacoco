@@ -1,7 +1,7 @@
 package net.appsynth.danger.model
 
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.assertj.core.api.Assertions.assertThat
 
 class CoverageTest {
 
@@ -12,7 +12,7 @@ class CoverageTest {
             "app/src/main/kotlin/com/example/model/Baz.kt"
         )
 
-        assertEquals(0.0f, coverage)
+        assertThat(coverage).isEqualTo(0.0f)
     }
 
     @Test
@@ -22,7 +22,7 @@ class CoverageTest {
             "app/src/main/kotlin/com/example/model/None.kt"
         )
 
-        assertEquals(null, coverage)
+        assertThat(coverage).isNull()
     }
 
     @Test
@@ -32,7 +32,7 @@ class CoverageTest {
             "app/src/main/kotlin/com/example/Foo.kt"
         )
 
-        assertEquals(null, coverage)
+        assertThat(coverage).isNull()
     }
 
     @Test
@@ -42,8 +42,26 @@ class CoverageTest {
         coverage.aggregate(COVERAGE)
         coverage.aggregate(COVERAGE2)
 
-        assertEquals(1.0f, coverage.coverageForFile(MetricType.INSTRUCTION, "com/example/Foo.kt"))
-        assertEquals(0.75f, coverage.coverageForFile(MetricType.INSTRUCTION, "net/example/FooBar.kt"))
+        assertThat(coverage.coverageForFile(MetricType.INSTRUCTION, "com/example/Foo.kt"))
+            .isEqualTo(1.0f)
+        assertThat(coverage.coverageForFile(MetricType.INSTRUCTION, "net/example/FooBar.kt"))
+            .isEqualTo(0.75f)
+    }
+
+    @Test
+    fun `coverage is empty for new instance`() {
+        val coverage = Coverage()
+
+        assertThat(coverage.isEmpty()).isTrue
+    }
+
+    @Test
+    fun `coverage is not empty after aggregating`() {
+        val coverage = Coverage().apply {
+            aggregate(COVERAGE)
+        }
+
+        assertThat(coverage.isEmpty()).isFalse
     }
 
     companion object {

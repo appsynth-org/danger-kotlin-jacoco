@@ -29,6 +29,13 @@ class Coverage {
     }
 
     /**
+     * Checks if there is any coverage information.
+     *
+     * @return true, when there is no coverage information.
+     */
+    fun isEmpty(): Boolean = sourceFileMetricsMap.isEmpty()
+
+    /**
      * Looks up coverage ratio of a specified [metricType] for a source file.
      *
      * @param metricType type of metric.
