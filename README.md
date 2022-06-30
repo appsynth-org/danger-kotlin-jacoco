@@ -54,6 +54,13 @@ jacoco {
 }
 ```
 
+### Snapshot versions
+
+To use snapshot versions of this plugin, just add repository annotation to your `Dangerfile.df.kts`.
+```kotlin
+@file:Repository("https://oss.sonatype.org/content/repositories/snapshots/")
+```
+
 ## Examples
 ```kotlin
 @file:DependsOn("net.appsynth.danger:danger-kotlin-jacoco:X.Y.Z")
