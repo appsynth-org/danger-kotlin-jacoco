@@ -16,7 +16,6 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Sign & Publish
-        if: github.ref == 'refs/heads/main'
         run: .ci/deploy.sh
         env:
           GPG_SECRET: ${{ secrets.GPG_SECRET }}
