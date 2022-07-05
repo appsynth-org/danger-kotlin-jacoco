@@ -17,7 +17,7 @@ plugins {
 }
 
 group = "net.appsynth.danger"
-version = "0.2.1-SNAPSHOT"
+version = "0.2.1"
 
 val isReleaseVersion = !version.toString().endsWith("SNAPSHOT")
 
