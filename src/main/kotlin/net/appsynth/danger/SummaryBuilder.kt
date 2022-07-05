@@ -34,13 +34,8 @@ class SummaryBuilder(
 
         return buildString {
             append("### Coverage Summary\n\n")
-            if (referenceCoverage.isEmpty()) {
-                append("| Source file | Coverage |\n")
-                append("| --- | --- |\n")
-            } else {
-                append("| Source file | Coverage | Trend |\n")
-                append("| --- | --- | --- |\n")
-            }
+            append("| *Source file* | *Coverage* |\n")
+            append("| --- | --- |\n")
 
             for (fileCoverage in sourceFileCoverage.take(maxReportedFiles)) {
                 val line = if (referenceCoverage.isEmpty()) {
@@ -73,11 +68,11 @@ class SummaryBuilder(
             "${currentCoverage.toCoveragePercent()} (${(currentCoverage - referenceCoverage).toDiff()})"
         }
         val trend = when {
-            currentCoverage - referenceCoverage > 0 -> ":chart_with_upwards_trend:"
-            currentCoverage - referenceCoverage < 0 -> ":chart_with_downwards_trend:"
+            currentCoverage - referenceCoverage > 0 -> ":small_red_triangle:"
+            currentCoverage - referenceCoverage < 0 -> ":small_red_triangle_down:"
             else -> ":heavy_minus_sign:"
         }
-        return "| $fileName | $displayedCoverage | $trend |\n"
+        return "| $fileName | $displayedCoverage $trend |\n"
     }
 
     private fun Float.toCoveragePercent(): String = "%.2f%%".format(this * 100)

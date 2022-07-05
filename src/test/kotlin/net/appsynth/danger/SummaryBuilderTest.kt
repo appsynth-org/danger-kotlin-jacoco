@@ -15,7 +15,7 @@ class SummaryBuilderTest {
         val summary = builder.build(FILES)
 
         assertThat(summary)
-            .contains("| Source file | Coverage |\n")
+            .contains("| *Source file* | *Coverage* |\n")
             .contains("| --- | --- |\n")
     }
 
@@ -65,14 +65,14 @@ class SummaryBuilderTest {
     }
 
     @Test
-    fun `show extended header for diff summary`() {
+    fun `show header for diff summary`() {
         val builder = SummaryBuilder(COVERAGE, 0, REF_COVERAGE)
 
         val summary = builder.build(FILES)
 
         assertThat(summary)
-            .contains("| Source file | Coverage | Trend |\n")
-            .contains("| --- | --- | --- |\n")
+            .contains("| *Source file* | *Coverage* |\n")
+            .contains("| --- | --- |\n")
     }
 
     @Test
@@ -82,11 +82,11 @@ class SummaryBuilderTest {
         val summary = builder.build(FILES)
 
         assertThat(summary)
-            .contains("| Foo.kt | 100.00% (+0.00) | :heavy_minus_sign: |")
-            .contains("| Bar.kt | 50.00% (+25.00) | :chart_with_upwards_trend: |")
-            .contains("| Baz.kt | 0.00% (-25.00) | :chart_with_downwards_trend: |")
-            .contains("| FooBar.kt | 1.00% (+1.00) | :chart_with_upwards_trend: |")
-            .contains("| BarBaz.kt | 0.00% (-1.00) | :chart_with_downwards_trend: |")
+            .contains("| Foo.kt | 100.00% (+0.00) :heavy_minus_sign: |")
+            .contains("| Bar.kt | 50.00% (+25.00) :small_red_triangle: |")
+            .contains("| Baz.kt | 0.00% (-25.00) :small_red_triangle_down: |")
+            .contains("| FooBar.kt | 1.00% (+1.00) :small_red_triangle: |")
+            .contains("| BarBaz.kt | 0.00% (-1.00) :small_red_triangle_down: |")
     }
 
     companion object {
