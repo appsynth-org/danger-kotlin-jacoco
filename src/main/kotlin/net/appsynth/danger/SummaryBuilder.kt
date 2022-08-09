@@ -34,7 +34,7 @@ class SummaryBuilder(
 
         return buildString {
             append("### Coverage Summary\n\n")
-            append("| *Source file* | *Coverage* |\n")
+            append("| **Source file** | **Coverage** |\n")
             append("| --- | --- |\n")
 
             for (fileCoverage in sourceFileCoverage.take(maxReportedFiles)) {

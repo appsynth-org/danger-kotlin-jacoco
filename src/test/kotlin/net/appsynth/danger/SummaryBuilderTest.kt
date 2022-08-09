@@ -15,7 +15,7 @@ class SummaryBuilderTest {
         val summary = builder.build(FILES)
 
         assertThat(summary)
-            .contains("| *Source file* | *Coverage* |\n")
+            .contains("| **Source file** | **Coverage** |\n")
             .contains("| --- | --- |\n")
     }
 
@@ -71,7 +71,7 @@ class SummaryBuilderTest {
         val summary = builder.build(FILES)
 
         assertThat(summary)
-            .contains("| *Source file* | *Coverage* |\n")
+            .contains("| **Source file** | **Coverage** |\n")
             .contains("| --- | --- |\n")
     }
 
